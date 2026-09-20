@@ -28,8 +28,10 @@ graph TD
     
     G --> H[Groq LLM API]
     H --> I[Final Generated Answer with Sources]
+```
 
 ## 📁 Repository Structure
+
 
 v3/
 │
