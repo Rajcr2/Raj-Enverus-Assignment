@@ -1,4 +1,4 @@
-# Product Intern - Machine Learning & Gen-AI: RAG Assignment
+# Product Intern - Machine Learning & Gen-AI : RAG Chatbot (Case Study)
 
 A robust Retrieval-Augmented Generation (RAG) chatbot pipeline built to ingest technical documentation, parse documents, store embeddings, and perform accurate question answering with retrieved context.
 
@@ -32,11 +32,11 @@ graph TD
 
 ## 📁 Repository Structure
 
-
+```text
 v3/
 │
 ├── data/
-│   └── 2410.10934v2_7033 1.pdf      # Source document for ingestion
+│   └── agent_as_a_judge.pdf      # Source document for ingestion
 │
 ├── src/
 │   ├── app.py                    # Main application / chatbot entry point
@@ -44,9 +44,11 @@ v3/
 │   ├── prompts.py                # System prompt templates
 │   └── rag.py                    # RAG chain logic and retrieval implementation
 │
-├── .env                          # Environment configuration template
+├── .env.example                  # Environment configuration template
+├── .gitignore                    # Ignored files (cache, virtualenvs, etc.)
 ├── requirements.txt              # Python package dependencies
 └── README.md                     # Project documentation and workflow
+```
 
 ## 🚀 Setup and Installation
 
@@ -55,7 +57,12 @@ v3/
 ```
 pip install -r requirements.txt
 ```
-
+3. Configure environment variables.
+4. Ingest documents and run the pipeline :
+```
+python v3/src/ingest.py
+streamlit run v3/src/app.py
+```
 
 
 
