@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+chroma_db/
+.streamlit/
+chroma_embeddings/
+data/agent_as_a_judge.pdf
+
