@@ -23,7 +23,7 @@ questions about it, **showing the exact PDF chunks each answer is based on**.
 | Vector database | ChromaDB (persistent, cosine similarity) |
 | Keyword search | BM25, implemented in `src/rag.py` (no extra library) |
 | Retrieval fusion | Reciprocal Rank Fusion, with slots guaranteed to each search |
-| LLM | Groq API, default `llama-3.3-70b-versatile` (set with `GROQ_MODEL`) |
+| LLM | Groq API, default `openai/gpt-oss-20b` (set with `GROQ_MODEL`) |
 | Prompts | Plain Python with `textwrap.dedent` (`src/prompts.py`) |
 | UI | Streamlit chat interface |
 | Config | `python-dotenv` (`.env`) |
@@ -104,7 +104,7 @@ streamlit run src/app.py
 ```
 python src/rag.py
 ```
-Settings in `.env`: `GROQ_API_KEY` (required), `GROQ_MODEL` (default `openai-gpt-oss-20b`), `TOP_K` (chunks per answer, default 8).
+Settings in `.env`: `GROQ_API_KEY` (required), `GROQ_MODEL` (default `openai/gpt-oss-20b`), `TOP_K` (chunks per answer, default 8).
 
 ## 📊 Question bank results
  
@@ -140,5 +140,5 @@ The full answers with their retrieved chunks are in [`answers.md`](answers.md).
  
 - Text comes from the PDF text layer. Text that exists only inside chart images (for example axis labels in Figure 2) is not OCR'd; no question in the question bank depends on it.
 - The paper's Section 4.4 states the cost and time percentages in the opposite order to the introduction (2.29% cost / 2.36% time versus 97.72% time / 97.64% cost saved). The chatbot reports what each section says.
-- Answer quality depends on the chosen Groq model; `llama-3.3-70b-versatile` is recommended for table questions.
+- Answer quality depends on the chosen Groq model; `openai/gpt-oss-20b` is recommended for table questions.
 
